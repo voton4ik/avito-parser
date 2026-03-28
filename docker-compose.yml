@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  avito-parser:
+    build: .
+    container_name: avito_parser
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Папка с логами — доступна снаружи контейнера
+      - ./logs:/app/logs
+      # База данных — сохраняется между перезапусками
+      - ./data:/app/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
