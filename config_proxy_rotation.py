@@ -1,6 +1,10 @@
 TELEGRAM_BOT_TOKEN = ""
 TELEGRAM_CHAT_ID = 11111111 #должен начинаться с -
-PROXY = "" #формат: "http://логин:пароль@ip:port"
+PROXIES = [
+    "http://user1:pass1@proxy1.example.com:8080", #формат: "http://логин:пароль@ip:port"
+    "http://user2:pass2@proxy2.example.com:8080",
+    "socks5://user3:pass3@proxy3.example.com:1080",
+]
 
 # ВАЖНО: URL берётся прямо с Avito — настройте фильтры в браузере,
 # выберите сортировку «По дате» и скопируйте URL.
